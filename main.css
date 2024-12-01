@@ -1,0 +1,562 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
+
+body {
+  margin: 0;
+  font-family: "Roboto", serif;
+}
+
+.container {
+  display: flex; /* Используем Flexbox для горизонтального разделения */
+  height: 100vh; /* Высота контейнера во всю высоту экрана */
+}
+
+.color-section {
+  display: flex; /* Добавлено для вертикального центрирования */
+  flex-direction: column; /* Размещение элементов по вертикали */
+  align-items: center; /* Центрируем элементы по горизонтали */
+}
+
+.gray {
+  background-color: #E9E9E9; /* Серый цвет */
+  flex: 0 0 40%; /* Занимает 35% ширины контейнера */
+  position: relative; /* Необходимо для позиционирования дочерних элементов */
+    z-index: 4;
+}
+
+.svg-container {
+  position: absolute; /* Позволяет привязать к низу gray */
+  bottom: 0; /* Привязка к низу */
+  left: 43%; /* Центрирование по горизонтали */
+  transform: translateX(-50%); /* Коррекция для центрирования */
+  margin-bottom: 0;
+}
+
+.svg1 {
+  width: 530px; /* Ширина SVG */
+  height: 520px; /* Высота SVG */
+  display: block;
+}
+
+.light-gray {
+  background-color: #D9D9D9; /* Чуть более серый цвет */
+  flex: 0 0 60%; /* Занимает 60% ширины контейнера */
+}
+
+.light-gray-text {
+  margin-bottom: 140px;
+  font-size: 32px;
+  color: black; /* Цвет текста для лучшего контраста */
+  text-align: center; /* Центрируем текст */
+    transform: translate(0, -140px);
+}
+
+.burger-checkbox {
+position: absolute;
+visibility: hidden;
+}
+
+.burger {
+position: relative;
+z-index: 10;
+cursor: pointer;
+display: block;
+border: none;
+background: transparent;
+width: 40px;
+height: 26px;
+transform: translate(440px, 20px);
+}
+
+.burger::before,
+.burger::after {
+content: '';
+left: 0;
+position: absolute;
+display: block;
+width: 100%;
+height: 4px;
+border-radius: 10px;
+background: #000;
+}
+
+.burger::before {
+top: 0;
+box-shadow: 0 11px 0 #000;
+transition: box-shadow .3s .5s, top .3s .15s, transform .3s;
+}
+
+.burger::after {
+bottom: 0;
+transition: bottom .3s .15s, transform .3s;
+}
+
+.burger-checkbox:checked + .burger::before {
+top: 11px;
+transform: rotate(45deg);
+box-shadow: 0 6px 0 rgba(0, 0, 0, 0);
+transition: box-shadow .15s, top .3s, transform .3s .15s;
+}
+
+.burger-checkbox:checked + .burger::after {
+bottom: 11px;
+transform: rotate(-45deg);
+transition: bottom .3s, transform .3s .15s;
+}
+
+.menu-list {
+top: 0;
+left: 0;
+position: absolute;
+transition: .3s;
+display: grid;
+gap: 75px;
+padding: 40px 0;
+margin: 0;
+background: white;
+list-style-type: none;
+transform: translateX(794%);
+transition: .3s;
+width: 200px;
+}
+
+.menu-item {
+display: grid;
+padding: 8px;
+color: black;
+font-size: 24px;
+text-align: center;
+text-decoration: none;
+transition: .3s;
+}
+
+.menu-item:hover {
+background: rgba(255, 255, 255, .2);
+transition: .3s;
+}
+
+.burger-checkbox:checked ~ .menu-list {
+display: grid;
+transform: translateX(691%);
+transition: .3s;
+}
+
+/* Новые стили для скрытия меню при горизонтальном скролле */
+body {
+overflow-x: hidden; /* Скрыть горизонтальный скролл */
+}
+.bublikfork{
+transform: translate(1000px,-3000px);
+}
+.menu-list {
+visibility: hidden; /* Скрыть меню, не давая взаимодействовать до выбора */
+}
+
+.burger-checkbox:checked ~ .menu-list {
+visibility: visible; /* Показать меню только при нажатии на бургер */
+}
+.svglogo1 {
+  width: 150px;
+  height: 150px;
+  transform: translate(0, -120px);
+}
+
+.btn-new {
+  padding: 10px 20px; /* Добавлено для создания пространства вокруг текста кнопки */
+  background-color: white; /* Цвет кнопки */
+  color: black; /* Цвет текста кнопки */
+  border: none; /* Убираем рамку */
+  border-radius: 50px; /* Закругленные углы */
+  cursor: pointer; /* Курсор в виде руки */
+  font-size: 18px;
+  width: 190px;
+  height: 100px;
+  margin-bottom: 40px; /* Отступ снизу */
+  transition: 0.5s;
+  transform: translate(0, -260px);
+}
+
+.btn-new:hover {
+  transform: translate(0, -257px);
+  box-shadow: 0 20px 40px 0 rgba(138, 43, 226, 1);
+}
+.svg1{
+  animation-name: circle-to-square;
+  animation-duration: 5s;
+  animation-iteration-count: infinite;
+  animation-direction: alternate;
+    z-index: 4;
+}
+
+.content {
+  background-color: #FFFFFF; /* Белый цвет для контента */
+  min-height: 100vh; /* Обеспечиваем минимальную высоту для контента */
+  padding: 0px; /* Отступы для контента */
+}
+.bublikodin{transform: translate(0,-814px);
+z-index: 3;
+}
+
+.rectangle {
+    width: 1000px; /* Ширина прямоугольника */
+    height: 100px; /* Высота прямоугольника */
+    border: 2px solid #ABBE9E; /* Черная обводка */
+    border-radius: 50px; /* Закругленные углы */
+    background-color: transparent; /* Прозрачный фон */
+    display: flex; /* Используем flexbox для размещения текста */
+    justify-content: space-between; /* Равные отступы между элементами */
+    align-items: center; /* Центрируем текст по вертикали */
+    padding: 0 20px; /* Устанавливаем отступы по бокам для лучшего отображения */
+    margin-top: 575px;  /* Отступ сверху */
+margin-left: 275px; /* Отступ слева */
+transform: translate(0,-1430px);
+
+
+}
+
+.txtinrectone {
+    font-size: 21px;
+
+    color: black; /* Цвет текста для лучшего контраста */
+    flex: 1; /* Каждый текст займет равное пространство */
+    text-align: center; /* Центрируем текст */
+
+}
+
+.imageone {
+   margin-left: 278px; /* Отступ слева */
+   transform: translate(0,-1363px);
+   width: 333px;
+   height: 312px;
+}
+.header {
+font-size: 26px;
+font-family: Roboto;
+font-weight:normal;
+
+  margin-left: 630px; /* Отступ6слева */
+  transform: translate(0,-1683px);
+
+}
+
+.postheaderone{
+font-size: 24px;
+font-family: Roboto;
+font-weight:normal;
+
+  margin-left: 630px; /* Отступ6слева */
+  transform: translate(0,-1648px);
+
+}
+
+.infoheaderone{
+  font-size: 21px;
+  font-family: Roboto;
+  font-weight:lighter;
+  margin-left: 630px; /* Отступ6слева */
+  transform: translate(0,-1665px);
+
+
+}
+.postheadertwo{  font-size: 24px;
+  font-family: Roboto;
+  font-weight:normal;
+  margin-left: 860px; /* Отступ6слева */
+  transform: translate(0,-1677px);
+
+}
+
+
+
+.infoheadertwo{
+  font-size: 21px;
+  font-family: Roboto;
+  font-weight:lighter;
+    margin-left: 860px;
+  transform: translate(0,-1740px);
+}
+
+.nmbrtwo{
+  font-size: 196px;
+  color: #E9E9E9;
+  font-family: Roboto;
+  font-weight:inherit;
+    margin-left: 278px;
+  transform: translate(0,-1927px);/*отступ 120 пикселя ЗАПОМНИ БЛЯ */
+  .headnmbrwto {
+  font-family: Roboto;
+  font-weight:normal;
+  margin-left: 278px;
+  transform: translate(0,-2186px);/*отступ 120 пикселя ЗАПОМНИ БЛЯ */
+}
+
+}
+.postheaderbrtwo {
+  font-size: 32px;
+  font-family: Roboto;
+  font-weight:lighter;
+
+  margin-left: 407px;
+  transform: translate(0,-2276px);/*отступ 120 пикселя ЗАПОМНИ БЛЯ */
+
+}
+.headnmbrwto{
+  font-size: 32px;
+  font-family: Roboto;
+  font-weight:normal;
+
+  margin-left: 407px;
+  transform: translate(0,-2278px);/*отступ 120 пикселя ЗАПОМНИ БЛЯ */
+}
+.bublikdva{
+margin:0px;
+margin-left: -350px;
+  transform: translate(0,-3400px)
+
+}
+.frametwo{
+position:relative;
+top: -2370px;
+left:852px;
+}
+.framthree{
+  position:relative;
+  top: -2450px;
+  left:285px;}
+.framfour{
+  position:relative;
+  top: -2490px;
+  left:1024px;
+}
+.framerone{
+display: flex;
+
+  font-size: 48px;
+  font-color:black;
+  font-family: Roboto;
+  font-weight:lighter;
+  transform: translate(0,1200px);
+
+  margin-left: 307px;
+  transform: translate(0,-2100px);/*отступ 120 пикселя ЗАПОМНИ БЛЯ */
+}
+.txtfrmrwo{
+  display: flex;
+
+    font-size: 48px;
+    font-color:black;
+    font-family: Roboto;
+    font-weight:lighter;
+    margin-left: 857px;
+    transform: translate(0,-2185px);
+}
+.txtfrmthre{
+  display: flex;
+
+    font-size: 48px;
+    font-color:black;
+    font-family: Roboto;
+    font-weight:lighter;
+    margin-left: 377px;
+    transform: translate(0,-2140px);
+
+}
+/*здесь надо добавить еще текст*/
+
+.mbrtre{
+  font-size: 196px;
+  color: #E9E9E9;
+  font-family: Roboto;
+  font-weight:inherit;
+    margin-left: 278px;
+  transform: translate(0,-2380px);/*отступ 120 пикселя ЗАПОМНИ БЛЯ */
+}
+.headnmbrtre{
+  font-size: 32px;
+  font-family: Roboto;
+  font-weight:normal;
+
+  margin-left: 407px;
+  transform: translate(0,-2500px);/*отступ 120 пикселя ЗАПОМНИ БЛЯ */
+}
+.releone, .reletwo {
+font-size: 28px; /* Размер шрифта для текста */
+font-family: Roboto;
+font-weight: lighter;
+z-index: 2;
+}
+
+.releone {
+position: relative;
+top: -2820px; /* Проверьте необходимость этих значений */
+left: 20%;
+z-index: 2;
+}
+
+.reletwo {
+position: relative;
+top: -3060px; /* Проверьте необходимость этих значений */
+left: 68%;
+z-index: 2;
+}
+
+/* Стили для маркеров списков */
+.releone li::marker,
+.reletwo li::marker {
+color: green; /* Цвет маркеров будет зеленым */
+font-size: 32px; /* Увеличиваем размер маркеров */
+}
+.linia{position:relative;
+  align-items: center;
+top: -3795px;
+height: 100vh;
+z-index: 1;
+}
+.mstr {
+  position:relative;
+  top: -2465px;
+  left:40%;
+  z-index: 2;
+}
+.bublikfave{
+position: relative;
+top: 0px;
+left: 1500px;
+transform: translate(0,1000px);
+}
+.bubliksix{
+transform: translate(0,-740px)
+}
+.mbrfor{
+  font-size: 196px;
+  color: #E9E9E9;
+  font-family: Roboto;
+  font-weight:inherit;
+    margin-left: 278px;
+  transform: translate(0,-3760px);/*отступ 120 пикселя ЗАПОМНИ БЛЯ */
+}
+.tsenik{
+  font-size: 32px;
+  font-family: Roboto;
+  font-weight:normal;
+
+  margin-left: 407px;
+  transform: translate(0,-4400px);
+}
+.ramka
+{
+position: relative;
+left: 18%;
+top:-3757px;
+}
+
+.mbrfv{
+  font-size: 196px;
+  color: #E9E9E9;
+  font-family: Roboto;
+  font-weight:inherit;
+    margin-left: 278px;
+  transform: translate(0,-3715px);
+  z-index:9;
+}
+.mbrfvhead{
+  font-size: 32px;
+  font-family: Roboto;
+  font-weight:normal;
+
+  margin-left: 407px;
+  transform: translate(0,-4594px);
+  z-index: 9;
+}
+.slider{
+  position: relative;
+  left 18%;
+  top:-4500px;
+  z-index: 9;
+}
+.linebckgtwos{
+  align-items: center;
+top: -2795px;
+height: 100vh;
+z-index: 8;
+transform: translate(0,-3760px);
+}
+.nmbrsix
+{font-size: 196px;
+  color: #E9E9E9;
+  font-family: Roboto;
+  font-weight:inherit;
+    margin-left: 278px;
+  transform: translate(0,-4415px);
+}
+.how{font-size: 32px;
+font-family: Roboto;
+font-weight:normal;
+
+margin-left: 407px;
+transform: translate(0,-4535px);
+
+
+
+}
+.maper{
+  position: relative;
+  left: 18%;
+transform: translate(0,-4448px);
+}
+.prisiv{
+  font-size: 32px;
+  font-family: Roboto;
+  font-weight:bold;
+
+  margin-left: 980px;
+  transform: translate(0,-4880px);
+}
+.adres{
+  font-size: 28px;
+  font-family: Roboto;
+  font-weight:normal;
+  margin-left: 4px;
+
+}
+.phone{font-size: 28px;
+font-family: Roboto;
+font-weight:normal;
+margin-left: 4px;
+transform: translate(0,20px);
+}
+
+
+.vks{
+margin-left: -300px;
+transform: translate(0,400px);
+
+
+}
+.tgs{
+  margin-left: 20px;
+  transform: translate(0,400px);
+
+
+
+}
+
+.insts{
+  margin-left: 20px;
+  transform: translate(0,400px);
+
+
+
+
+}
+
+.ups{
+  margin-left: 470px;
+  transform: translate(0,200px);
+
+
+
+
+
+
+
+}
